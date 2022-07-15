@@ -1,0 +1,176 @@
+body {
+  font-family: sans-serif;
+  background: #6082b6;
+}
+
+h3 {
+  font-size: 30px;
+  background-color: white;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+p {
+  text-align: center;
+  color: black;
+}
+
+#dogform p {
+  text-align: center;
+  font-size: 22px;
+  color: black;
+}
+
+table {
+  table-layout: fixed;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  width: 100%;
+  color: black;
+  font-size: 19px;
+}
+
+select {
+  width: 70%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  font-size: 19px;
+}
+
+#app {
+  margin: auto;
+  margin-bottom: 40px;
+  width: 60%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+form {
+  text-align: center;
+  padding: 15px;
+}
+.weight {
+  width: 40%;
+}
+
+input[type="checkbox"] {
+  /* appearance: none; */
+  background-color: #fff;
+  margin-right: center;
+  font: inherit;
+  color: currentColor;
+  width: 1em;
+  height: 1em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  display: inline-block;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  background-color: CanvasText;
+}
+*/ input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+#results {
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+  -webkit-jusitfy-content: space-around;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+
+.card {
+  text-align: center;
+  width: 25rem;
+  height: 35rem;
+  padding-bottom: 30px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card img {
+  flex: 0 1 auto;
+  height: 150px;
+  object-fit: cover;
+  margin: auto;
+}
+
+#submit {
+  margin: auto;
+  background: white;
+  color: #1b1c47;
+  font-size: 20px;
+  border-radius: 0.3em;
+  border: none;
+  border-bottom: 4px solid #0b64c9;
+  cursor: pointer;
+  padding: 15px 32px;
+}
+
+button {
+  margin: auto;
+  background: white;
+  color: #1b1c47;
+  font-size: 17px;
+  border-radius: 0.3em;
+  border: none;
+  border-bottom: 4px solid #0b64c9;
+  cursor: pointer;
+  padding: 7px 11px;
+}
+
+button:hover {
+  background-color: #0b64c9;
+  color: white;
+  border-bottom: 4px solid white;
+}
+
+button:active {
+  background-color: #0b64c9;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  color: white;
+  border-bottom: 4px solid white;
+}
+
+.space {
+  width: 15px;
+  height: auto;
+  display: inline-block;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Puppy Pairing</title>
+	<meta name = "viewport" content = "width=device-width, initial-scale=1" charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="src/styles.css" />
+</head>
+
+<body>
+	<img id="logo" src="./src/PuppyPairingLogo.png">
+	</br>
+	
+<div id="app">
+	<form id="dogform">
+		<h2>
+			Tell us about your dream dog and we'll match you with your perfect puppy!
+		</h2>
+		<hr/>
+	</br>
+			<p>How heavy do you want your new lap dog to be? </p>
+				<select id="weight">
+				<option selected="selected" value="small">Small lap dog (3-20 lbs)</option>
+				<option value="medium">Slightly heavier lap dog (21-55 lbs)</option>
+				<option value="large">Relatively heavy lap dog (56-80 lbs)</option>
+				<option value="xlarge">"Probably shouldn't be a lap dog" lap dog (81-180 lbs)</option>
+				</select>
+			<br></br>
+			<p>How tall would you like your new companion to be? </p> 
+				<select id="height">
+				<option selected="selected" value="small">Ankle Biter / Napoleon complex (up to 10 inches)</option>
+				<option value="medium">Small child size (11 - 20 inches)</option>
+				<option value="large"> Small dinosaur (21+ inches)</option>
+				</select>
+			<br></br>
+			<p>What personality traits are important to you in a dog? </p> 
+			<table cellpadding="2" class="center">
+				<tbody>
+				<tr>
+				<td><input name="temp" type="checkbox" value ="Friendly"/><span>Friendly</span></td>
+				<td><input name="temp" type="checkbox" value ="Affectionate"/><span>Affectionate</span></td>
+				<td><input name="temp" type="checkbox" value ="Playful"/><span>Playful</span></td>
+				<td><input name="temp" type="checkbox" value ="Loyal"/><span>Loyal</span></td>
+				<td><input name="temp" type="checkbox" value ="Trainable"/><span>Trainable</span></td>
+				</tr>
+				<tr>
+				<td><input name="temp" type="checkbox" value ="Protective"/><span>Protective</span></td>
+				<td><input name="temp" type="checkbox" value ="Outgoing"/><span>Outgoing</span></td>
+				<td><input name="temp" type="checkbox" value ="Obedient"/><span>Obedient</span></td>
+				<td><input name="temp" type="checkbox" value ="Intelligent"/><span>Intelligent</span></td>
+				<td><input name="temp" type="checkbox" value ="Athletic"/><span>Athletic</span></td>
+				</tr>
+				</tbody>
+			</table> 
+		<br></br>
+		<input id="submit" type="submit" value="Submit"/>
+	</form>
+</div>
+<!-- hide results until after submission -->
+<div id = "results" hidden>
+</div>
+<script type='text/javascript' src='src/config.js'></script>
+<script src="src/index.js"></script>
+</body>
+
+</html>
