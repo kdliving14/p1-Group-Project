@@ -29,6 +29,7 @@ function mainGet() {
     /* setting origDogsList value in an array.*/
     .then((data) => {
       origDogsList = data;
+      // console.log(origDogsList);
     });
 }
 
@@ -40,6 +41,10 @@ form.addEventListener("submit", (e) => {
   //prevent refresh
   e.preventDefault();
 
+  //play audio when submit
+  // let audio = new Audio("./src/DogBark2.wav");
+  // audio.play();
+
   //values
   const uweight = document.querySelector("#weight").value;
   const uheight = document.querySelector("#height").value;
@@ -49,9 +54,6 @@ form.addEventListener("submit", (e) => {
   for (var checkbox of boxes) {
     if (checkbox.checked) temp.push(checkbox.value);
   }
-
-  //test console logs
-  // console.log("form successfully submitted!");
 
   // filtering the weight
   const minMaxWeight = weightConverter(uweight);
@@ -75,13 +77,6 @@ form.addEventListener("submit", (e) => {
   } else {
     cleanData(heightResults);
   }
-});
-
-// when submit button is click, the bark sound plays
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let audio = new Audio("./src/DogBark2.wav");
-  audio.play();
 });
 
 /**
@@ -283,12 +278,13 @@ function showResults(finalResults) {
   //if there are no matches, make error screen
   if (finalResults.length === 0) {
     const result = document.createElement("p");
+    result.setAttribute("class", "message");
     const img = document.createElement("img");
-    result.textContent =
-      "Unfortunately we do not have any dogs that match your criteria, please refresh the page and try again.";
+    result.innerHTML = `Unfortunately we do not have any dogs that match your criteria, please refresh the page and try again.<br></br>`;
     img.src = "./src/sadDog.jpeg";
+    img.setAttribute("class", "sad_dog");
+    result.appendChild(img);
     results.appendChild(result);
-    results.appendChild(img);
   }
 
   //match rank counter for displaying rank
@@ -299,7 +295,12 @@ function showResults(finalResults) {
     //decrease rank as you go down the list (bigger #)
     counter++;
 
-    //create elements
+    //create paragraph element for explanation
+    const para = document.createElement("p");
+    const paraImg = document.createElement("img");
+    const paraDiv = document.querySelector(".para");
+
+    //create elements for cards
     const name = document.createElement("h3");
     const rank = document.createElement("h2");
     const image = document.createElement("img");
@@ -312,6 +313,11 @@ function showResults(finalResults) {
     const card = document.createElement("div");
 
     //fill elements
+    para.innerHTML = `We're sorry our results didn't met your pupspectations. <br></br>
+      Please refresh the page and try again. Your perfect pair is out there!<br></br>`;
+    para.setAttribute("class", "message");
+    paraImg.src = "./src/sadDog.jpeg";
+    paraImg.setAttribute("class", "sad_dog");
     name.textContent = dog.name;
     rank.textContent = `#${counter} Match`;
     image.src = dog.image.url;
@@ -360,6 +366,10 @@ function showResults(finalResults) {
         alert("Cannot remove a liked dog.");
       } else {
         results.removeChild(card);
+        if (results.querySelectorAll(".card").length === 0) {
+          para.appendChild(paraImg);
+          paraDiv.appendChild(para);
+        }
       }
     });
 
